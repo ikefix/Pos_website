@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export COMPOSER_HOME=$HOME/.composer
+    - /opt/cpanel/composer/bin/composer install --no-dev --optimize-autoloader
+    - php artisan migrate --force
+    - echo "Deployment complete"
