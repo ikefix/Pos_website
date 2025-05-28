@@ -1,7 +1,8 @@
----
 deployment:
   tasks:
-    - export COMPOSER_HOME=$HOME/.composer
-    - /opt/cpanel/composer/bin/composer install --no-dev --optimize-autoloader
-    - php artisan migrate --force
-    - echo "Deployment complete"
+    - export PATH=/opt/alt/php81/usr/bin:$PATH
+    - /opt/alt/php81/usr/bin/php /home/blootjmm/Invent_website/Pos-website/composer.phar install --no-dev --optimize-autoloader
+    - npm install --prefix /home/blootjmm/Invent_website/Pos-website
+    - npm run build --prefix /home/blootjmm/Invent_website/Pos-website
+
+
