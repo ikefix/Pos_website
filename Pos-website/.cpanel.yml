@@ -2,48 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/blootjmm/public_html
-    - /bin/cp -r ./* $DEPLOYPATH
-    - /bin/cp -r ./public/* $DEPLOYPATH
+    - /bin/rsync -av --delete-after public/ $DEPLOYPATH/
     - /bin/cp .env $DEPLOYPATH/.env
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    - /bin/ln -sf /home/blootjmm/Invent_website/Pos-website/vendor $DEPLOYPATH/vendor
+    - /bin/ln -sf /home/blootjmm/Invent_website/Pos-website/bootstrap $DEPLOYPATH/bootstrap
