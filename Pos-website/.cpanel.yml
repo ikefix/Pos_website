@@ -1,8 +1,49 @@
+---
 deployment:
   tasks:
-    - export PATH=/opt/alt/php81/usr/bin:$PATH
-    - /opt/alt/php81/usr/bin/php /home/blootjmm/Invent_website/Pos-website/composer.phar install --no-dev --optimize-autoloader
-    - npm install --prefix /home/blootjmm/Invent_website/Pos-website
-    - npm run build --prefix /home/blootjmm/Invent_website/Pos-website
+    - export DEPLOYPATH=/home/blootjmm/public_html
+    - /bin/cp -r ./* $DEPLOYPATH
+    - /bin/cp -r ./public/* $DEPLOYPATH
+    - /bin/cp .env $DEPLOYPATH/.env
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
